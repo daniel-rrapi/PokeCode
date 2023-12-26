@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  allPokemonURL: 'https://pokeapi.co/api/v2/pokemon/',
 };
 
 /*
