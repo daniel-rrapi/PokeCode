@@ -1,0 +1,20 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 32%;
+  display: inline-block;
+  margin-inline: 5px;
+  margin-top: 20px;
+}
+.container {
+  padding: 2px 16px;
+}
+img {
+  width: 100%;
+}
+.cardBody {
+  display: flex;
+  justify-content: center;
+}
+a {
+  color: inherit;
+}

@@ -11,12 +11,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'pokemon',
-    component: PokemonComponent,
+    path: 'pokedex',
+    component: AllPokemonComponent,
   },
   {
-    path: 'pokecazz',
-    component: AllPokemonComponent,
+    path: 'pokedex/:id',
+    component: PokemonComponent,
   },
 ];
 

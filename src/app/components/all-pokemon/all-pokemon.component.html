@@ -1,5 +1,7 @@
 <main>
-  <ng-container *ngFor="let pkm of pkms">
-    <p>{{ pkm.name }}</p>
-  </ng-container>
+  <app-single-pokemon-card
+    *ngFor="let pkm of pkms.results"
+    [pkmName]="pkm.name"
+  >
+  </app-single-pokemon-card>
 </main>

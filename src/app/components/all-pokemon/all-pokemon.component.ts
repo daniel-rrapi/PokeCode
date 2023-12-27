@@ -10,7 +10,7 @@ import { PokemonApiResponse } from 'src/app/interfaces/pokemon';
 export class AllPokemonComponent {
   pkms!: PokemonApiResponse;
   constructor(private pokemonSrv: PokemonService) {
-    pokemonSrv.getPokemon().subscribe((data) => {
+    pokemonSrv.getAllPokemon().subscribe((data) => {
       console.log(data);
       this.pkms = data;
     });

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PokemonApiResponse } from '../interfaces/pokemon';
+import { Pokemon, PokemonApiResponse } from '../interfaces/pokemon';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,9 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class PokemonService {
   constructor(private http: HttpClient) {}
-  getPokemon() {
+  getAllPokemon() {
     return this.http.get<PokemonApiResponse>(
       'https://pokeapi.co/api/v2/pokemon/'
+    );
+  }
+  getPokemonByName(pkmName: String) {
+    return this.http.get<Pokemon>(
+      `https://pokeapi.co/api/v2/pokemon/${pkmName}`
     );
   }
 }

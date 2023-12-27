@@ -1,0 +1,14 @@
+<a>
+  <div class="card">
+    <div class="cardHead">
+      <p>#{{ pokemon.order }}</p>
+      <img
+        [src]="pokemon.sprites.other?.['official-artwork'].front_default"
+        alt="pokemon image"
+      />
+    </div>
+    <div class="cardBody">
+      <h3>{{ pokemon.name | titlecase }}</h3>
+    </div>
+  </div>
+</a>
