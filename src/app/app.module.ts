@@ -7,9 +7,16 @@ import { AppComponent } from './app.component';
 import { AllPokemonComponent } from './components/all-pokemon/all-pokemon.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SinglePokemonCardComponent } from './components/single-pokemon-card/single-pokemon-card.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, AllPokemonComponent, SinglePokemonCardComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    AllPokemonComponent,
+    SinglePokemonCardComponent,
+    PokemonComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

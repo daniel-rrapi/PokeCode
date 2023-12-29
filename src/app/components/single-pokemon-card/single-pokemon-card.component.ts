@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Pokemon } from 'src/app/interfaces/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class SinglePokemonCardComponent implements OnInit {
   @Input() pkmName: any;
-  pokemon: any;
+  pokemon!: Pokemon;
   constructor(private pkmSrv: PokemonService) {}
 
   ngOnInit(): void {

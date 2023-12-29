@@ -9,9 +9,20 @@ import { PokemonApiResponse } from 'src/app/interfaces/pokemon';
 })
 export class AllPokemonComponent {
   pkms!: PokemonApiResponse;
+  pageNmbr: number[] = [];
   constructor(private pokemonSrv: PokemonService) {
     pokemonSrv.getAllPokemon().subscribe((data) => {
       console.log(data);
+      this.pkms = data;
+      // this.pageNmbr.push(pokemonSrv.pageNum);
+      for (let i = 0; i < pokemonSrv.pageNum; i++) {
+        this.pageNmbr.push(i);
+      }
+    });
+    console.log('numero pag ', pokemonSrv.pageNum);
+  }
+  fetchByPage(page: number) {
+    this.pokemonSrv.getAllPokemon(page).subscribe((data) => {
       this.pkms = data;
     });
   }

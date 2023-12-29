@@ -1,1 +1,9 @@
-<p>pokemon works!</p>
+<p>{{ pokemon.name }}</p>
+<img
+  [src]="pokemon.sprites.other?.['official-artwork']?.front_default"
+  alt=""
+/>
+<p>Ability:</p>
+<p *ngFor="let abilityObj of pokemon.abilities">
+  {{ abilityObj.ability.name }}
+</p>

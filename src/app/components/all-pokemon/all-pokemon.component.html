@@ -4,4 +4,7 @@
     [pkmName]="pkm.name"
   >
   </app-single-pokemon-card>
+  <button *ngFor="let num of pageNmbr" (click)="fetchByPage(num)">
+    {{ num + 1 }}
+  </button>
 </main>
