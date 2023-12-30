@@ -15,7 +15,6 @@ export class SinglePokemonCardComponent implements OnInit {
   ngOnInit(): void {
     this.pkmSrv.getPokemonByName(this.pkmName).subscribe((data) => {
       this.pokemon = data;
-      console.log(this.pokemon);
     });
   }
 }

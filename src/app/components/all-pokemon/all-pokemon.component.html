@@ -1,10 +1,10 @@
-<main>
+<main *ngIf="pkms?.results">
   <app-single-pokemon-card
     *ngFor="let pkm of pkms.results"
     [pkmName]="pkm.name"
   >
   </app-single-pokemon-card>
-  <button *ngFor="let num of pageNmbr" (click)="fetchByPage(num)">
+  <button *ngFor="let num of displayPageNum" (click)="fetchByPage(num)">
     {{ num + 1 }}
   </button>
 </main>

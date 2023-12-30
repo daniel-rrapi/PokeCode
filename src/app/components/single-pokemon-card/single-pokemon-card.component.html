@@ -1,4 +1,4 @@
-<a [routerLink]="pkmName">
+<a [routerLink]="pkmName" *ngIf="pokemon">
   <div class="card">
     <div class="cardHead">
       <p>#{{ pokemon.order }}</p>

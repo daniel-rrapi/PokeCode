@@ -1,1 +1,4 @@
 <p>navbar works!</p>
+<form (ngSubmit)="submitSearchForm($event)">
+  <input type="text" name="query" [(ngModel)]="query" />
+</form>
