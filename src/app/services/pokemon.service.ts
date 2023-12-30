@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pokemon, PokemonApiResponse } from '../interfaces/pokemon';
-import { tap } from 'rxjs';
+import { catchError, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokemonService {
   pageNum: number = 1;
+
   constructor(private http: HttpClient) {}
   getAllPokemon(pageNumber: number = 0) {
     return this.http
@@ -25,8 +26,13 @@ export class PokemonService {
       );
   }
   getPokemonByName(pkmName: String) {
-    return this.http.get<Pokemon>(
-      `https://pokeapi.co/api/v2/pokemon/${pkmName}`
-    );
+    return this.http
+      .get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${pkmName}`)
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+          return err.error as string;
+        })
+      );
   }
 }

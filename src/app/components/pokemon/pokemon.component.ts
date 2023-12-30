@@ -11,6 +11,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonComponent implements OnInit {
   pokemon!: Pokemon;
+  err: string | null = null;
   constructor(private route: ActivatedRoute, private pkmSrv: PokemonService) {
     route.paramMap
       .pipe(
@@ -25,7 +26,13 @@ export class PokemonComponent implements OnInit {
         })
       )
       .subscribe((data) => {
-        this.pokemon = data;
+        if (typeof data === 'string') {
+          // There is an error
+          this.err = data;
+        } else {
+          this.pokemon = data;
+          this.err = null;
+        }
       });
   }
 
