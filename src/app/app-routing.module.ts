@@ -5,6 +5,8 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { AllPokemonComponent } from './components/all-pokemon/all-pokemon.component';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
 const routes: Routes = [
   {
     path: '',
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'pokedex/:name',
     component: PokemonComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 

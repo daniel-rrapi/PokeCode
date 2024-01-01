@@ -1,1 +1,13 @@
-<p>signup works!</p>
+<form [formGroup]="signUpForm">
+  <input type="text" formControlName="firstName" placeholder="name" />
+  <input type="text" formControlName="lastName" placeholder="last name" />
+  <input type="email" formControlName="email" placeholder="email" />
+  <input type="password" formControlName="password" placeholder="password" />
+  <input
+    type="password"
+    formControlName="confirmPassword"
+    placeholder="confirm your password"
+  />
+  <input type="checkbox" formControlName="terms" name="terms" id="terms" />
+  <label for="terms">Sell your soul to Team Rocket</label>
+</form>
