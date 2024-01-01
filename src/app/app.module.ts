@@ -9,6 +9,8 @@ import { AllPokemonComponent } from './components/all-pokemon/all-pokemon.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SinglePokemonCardComponent } from './components/single-pokemon-card/single-pokemon-card.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
     AllPokemonComponent,
     SinglePokemonCardComponent,
     PokemonComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
