@@ -1,4 +1,4 @@
-<form [formGroup]="signUpForm">
+<form [formGroup]="signUpForm" (ngSubmit)="signup()">
   <input type="text" formControlName="firstName" placeholder="name" />
   <input type="text" formControlName="lastName" placeholder="last name" />
   <input type="email" formControlName="email" placeholder="email" />
@@ -9,5 +9,6 @@
     placeholder="confirm your password"
   />
   <input type="checkbox" formControlName="terms" name="terms" id="terms" />
-  <label for="terms">Sell your soul to Team Rocket</label>
+  <label for="terms">Sell your data to Team Rocket</label>
+  <button>Register</button>
 </form>
