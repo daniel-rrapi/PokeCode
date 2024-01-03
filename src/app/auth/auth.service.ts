@@ -12,4 +12,7 @@ export class AuthService {
     delete cleanUser.passwordConfirm;
     return this.http.post('http://localhost:3000/register', cleanUser);
   }
+  signin(body: Partial<User>) {
+    return this.http.post('http://localhost:3000/login', body )
+  }
 }

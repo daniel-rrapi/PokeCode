@@ -1,14 +1,15 @@
-<form [formGroup]="signUpForm" (ngSubmit)="signup()">
-  <input type="text" formControlName="firstName" placeholder="name" />
-  <input type="text" formControlName="lastName" placeholder="last name" />
-  <input type="email" formControlName="email" placeholder="email" />
-  <input type="password" formControlName="password" placeholder="password" />
+<form [formGroup]="signUpForm" (ngSubmit)="register()">
+  <input type="text" formControlName="firstName" placeholder="name" required/>
+  <input type="text" formControlName="lastName" placeholder="last name" required/>
+  <input type="email" formControlName="email" placeholder="email" required/>
+  <input type="password" formControlName="password" placeholder="password" required/>
   <input
     type="password"
-    formControlName="confirmPassword"
+    formControlName="passwordConfirm"
     placeholder="confirm your password"
+    required
   />
-  <input type="checkbox" formControlName="terms" name="terms" id="terms" />
+  <input type="checkbox" formControlName="terms" name="terms" id="terms" required/>
   <label for="terms">Sell your data to Team Rocket</label>
   <button>Register</button>
 </form>

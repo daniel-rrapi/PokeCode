@@ -4,5 +4,5 @@ export interface User {
   email: string | null;
   password: string | null;
   passwordConfirm: string | null;
-  terms: boolean | null;
+  terms: boolean;
 }

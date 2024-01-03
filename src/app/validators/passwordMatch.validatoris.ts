@@ -1,7 +1,7 @@
 import { AbstractControl } from '@angular/forms';
-import { User } from '../interfaces/user';
 
 export const passwordMatchValidator = (group: AbstractControl) => {
+  console.log(group)
   if (
     group.value.password === group.value.passwordConfirm &&
     group.value.password.lenght > 0

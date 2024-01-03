@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { passwordMatchValidator } from 'src/app/validators/passwordMatch.validatoris';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,6 +10,7 @@ import { passwordMatchValidator } from 'src/app/validators/passwordMatch.validat
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  
   signUpForm = new FormGroup(
     {
       firstName: new FormControl('', Validators.min(2)),
@@ -23,14 +25,18 @@ export class SignupComponent implements OnInit {
       passwordConfirm: new FormControl('', Validators.required),
       terms: new FormControl(),
     },
-    passwordMatchValidator
+    //passwordMatchValidator
   );
-  constructor(private authSrv: AuthService) {}
+  constructor(private authSrv: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
-  signup() {
+  register() {
+    if(this.signUpForm.value.password === this.signUpForm.value.passwordConfirm && this.signUpForm.value.terms){
     this.authSrv.signup(this.signUpForm.value).subscribe((data) => {
-      console.log(data);
-    });
+      this.router.navigate(['login'])
+    }); 
+  }else{
+   alert("Password Sbagliata o terms false")
+  }
   }
 }

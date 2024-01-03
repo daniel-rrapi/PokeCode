@@ -1,3 +1,20 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "pippo@pluto.com",
+      "password": "$2a$10$n0nWEW5PDgz.MfsH9oYo8Ob0DivXkNNwST6XHNsj5NaeohCxifcS6",
+      "firstName": "Pippo",
+      "lastName": "Pluto",
+      "terms": true,
+      "id": 1
+    },
+    {
+      "email": "uzo1209@gmail.com",
+      "password": "$2a$10$GZ6Ru9QcFQOrm3MGlUQ5lO8PvCk/H0/impDL60ZnhWNTO12LQ/ls.",
+      "firstName": "daniel",
+      "lastName": "rrapi",
+      "terms": true,
+      "id": 2
+    }
+  ]
 }
