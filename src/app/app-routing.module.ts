@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +29,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

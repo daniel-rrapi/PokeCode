@@ -1,7 +1,7 @@
-
 <form (ngSubmit)="submitSearchForm($event)">
   <input type="text" name="query" [(ngModel)]="query" />
 </form>
-<p>
+<p *ngIf="!isUserLogged">
   <a routerLink="login">Login</a> or <a routerLink="signup">Register</a>
 </p>
+<button *ngIf="isUserLogged" (click)="logout()">Logout</button>

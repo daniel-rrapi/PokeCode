@@ -12,6 +12,7 @@ import { SinglePokemonCardComponent } from './components/single-pokemon-card/sin
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     PokemonComponent,
     LoginComponent,
     SignupComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

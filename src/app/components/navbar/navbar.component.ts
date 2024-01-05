@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,11 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   query: string = '';
-
-  constructor(private router: Router) {
+  isUserLogged!: boolean;
+  constructor(private router: Router, private authSrv: AuthService) {
+    authSrv.isLoggedIn.subscribe((res) => {
+      this.isUserLogged = res;
+    });
   }
 
   ngOnInit(): void {}
@@ -17,5 +21,9 @@ export class NavbarComponent implements OnInit {
   submitSearchForm(ev: Event) {
     ev.preventDefault();
     this.router.navigate(['pokedex/', this.query]);
+  }
+
+  logout() {
+    this.authSrv.logout();
   }
 }
