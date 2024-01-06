@@ -1,5 +1,9 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <input type="email" placeholder="Email" formControlName="email">
-    <input type="password" placeholder="Password" formControlName="password">
-    <button>Login</button>
-</form>
+<main>
+    <form class="main-forms" [formGroup]="loginForm" (ngSubmit)="login()">
+        <h3>Login:</h3>
+        <input class="main-inputs-light" type="email" placeholder="Email" formControlName="email">
+        <input class="main-inputs-light" type="password" placeholder="Password" formControlName="password">
+        <button class="main-buttons-light">Login</button>
+    </form>
+    
+</main>

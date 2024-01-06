@@ -1,7 +1,9 @@
-<form (ngSubmit)="submitSearchForm($event)">
-  <input type="text" name="query" [(ngModel)]="query" />
-</form>
-<p *ngIf="!isUserLogged">
-  <a routerLink="login">Login</a> or <a routerLink="signup">Register</a>
-</p>
-<button *ngIf="isUserLogged" (click)="logout()">Logout</button>
+<nav>
+  <form (ngSubmit)="submitSearchForm($event)">
+    <input class="main-inputs-dark" type="text" name="query" [(ngModel)]="query" placeholder="Search for a pokemon..."/>
+  </form>
+  <div *ngIf="!isUserLogged" class="login-buttons-group">
+    <button class="main-buttons-dark" type="button" routerLink="login">LOGIN</button> <button class="main-buttons-dark" routerLink="signup">REGISTER</button>
+  </div>
+  <button *ngIf="isUserLogged" class="main-buttons-dark" (click)="logout()">Logout</button>
+</nav>
