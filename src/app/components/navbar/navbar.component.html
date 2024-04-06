@@ -1,9 +1,24 @@
 <nav>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png"
+    alt=""
+  />
   <form (ngSubmit)="submitSearchForm($event)">
-    <input class="main-inputs-dark" type="text" name="query" [(ngModel)]="query" placeholder="Search for a pokemon..."/>
+    <input
+      class="main-inputs-dark"
+      type="text"
+      name="query"
+      [(ngModel)]="query"
+      placeholder="Search for a pokemon..."
+    />
   </form>
   <div *ngIf="!isUserLogged" class="login-buttons-group">
-    <button class="main-buttons-dark" type="button" routerLink="login">LOGIN</button> <button class="main-buttons-dark" routerLink="signup">REGISTER</button>
+    <button class="main-buttons-dark" type="button" routerLink="login">
+      LOGIN
+    </button>
+    <button class="main-buttons-dark" routerLink="signup">REGISTER</button>
   </div>
-  <button *ngIf="isUserLogged" class="main-buttons-dark" (click)="logout()">Logout</button>
+  <button *ngIf="isUserLogged" class="main-buttons-dark" (click)="logout()">
+    Logout
+  </button>
 </nav>

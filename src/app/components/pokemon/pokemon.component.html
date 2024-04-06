@@ -1,13 +1,17 @@
 <main *ngIf="!err && pokemon">
-  <p>{{ pokemon.name }}</p>
-  <img
-    [src]="pokemon.sprites.other?.['official-artwork']?.front_default"
-    alt=""
-  />
-  <p>Ability:</p>
-  <p *ngFor="let abilityObj of pokemon.abilities">
-    {{ abilityObj.ability.name }}
-  </p>
+  <div>
+    <h1>{{ pokemon.name | uppercase }}</h1>
+    <img
+      [src]="pokemon.sprites.other?.['official-artwork']?.front_default"
+      alt=""
+    />
+    <ul>
+      Abilities
+      <li *ngFor="let abilityObj of pokemon.abilities">
+        {{ abilityObj.ability.name }}
+      </li>
+    </ul>
+  </div>
 </main>
 <main *ngIf="err">
   {{ err }}
